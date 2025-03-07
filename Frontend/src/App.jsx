@@ -1,11 +1,11 @@
 import './App.css'
+import { AppLayout } from './applayout/applayout'
+
 
 function App() {
 
   return (
-    <>
-      <div>This is Eventhon</div>
-    </>
+    <AppLayout/>
   )
 }
 
