@@ -5,8 +5,8 @@ export default function Contact() {
     const [email, setEmail] = useState("");
 
     return (
-        <div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", minHeight: "100vh", backgroundColor: "#0a1733", color: "white", padding: "20px", width: "100%" }}>
-            <div style={{ width: "100%", maxWidth: "800px", backgroundColor: "#162447", padding: "24px", borderRadius: "8px", boxShadow: "0 4px 6px rgba(0,0,0,0.1)", textAlign: "left" }}>
+        <div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", backgroundColor: "white", color: "white", padding: "20px", marginTop: "20px" }}>
+            <div style={{ width: "100%", maxWidth: "1100px", backgroundColor: "#162447", padding: "24px", borderRadius: "8px", boxShadow: "0 4px 6px rgba(0,0,0,0.1)", textAlign: "left" }}>
                 <h2 style={{ fontSize: "24px", fontWeight: "bold", color: "#4fa3ff" }}>How to contact Eventhon</h2>
                 <p>Find all details about our tech events, hackathons, and networking opportunities on our official portal.</p>
                 <p>For any queries, reach out to us through our support system. Please note that we do not provide telephone support.</p>
@@ -30,10 +30,10 @@ export default function Contact() {
                 <p>Follow us on X, LinkedIn, Telegram, and YouTube to stay updated.</p>
             </div>
 
-            <h1 style={{ fontSize: "32px", fontWeight: "bold", color: "#4fa3ff", marginTop: "24px" }}>Eventhon</h1>
+            <h1 style={{ fontSize: "32px", fontWeight: "bold", color: "#4fa3ff", marginTop: "20px", marginBottom: "10px" }}>Eventhon</h1>
             <p style={{ fontSize: "18px", color: "gray" }}>Bringing tech enthusiasts together, worldwide.</p>
 
-            <div style={{ width: "100%", maxWidth: "600px", backgroundColor: "#162447", padding: "24px", borderRadius: "8px", textAlign: "center", marginTop: "24px" }}>
+            <div style={{ width: "100%", maxWidth: "1100px", backgroundColor: "#162447", padding: "24px", borderRadius: "8px", textAlign: "center", marginTop: "14px" }}>
                 <h2 style={{ fontSize: "18px", fontWeight: "bold", color: "#72b2ff" }}>Stay Connected</h2>
                 <p><strong>Event Inquiries:</strong> contact@eventhon.com</p>
                 <p>📞 +91-9311777388 (Mon to Fri, 9 AM to 6 PM)</p>
@@ -49,10 +49,10 @@ export default function Contact() {
                 <FaYoutube />
             </div>
 
-            <div style={{ width: "100%", maxWidth: "600px", backgroundColor: "#162447", padding: "24px", borderRadius: "8px", textAlign: "center", marginTop: "24px" }}>
+            <div style={{ width: "100%", maxWidth: "1100px", backgroundColor: "#162447", padding: "24px", borderRadius: "8px", textAlign: "center", marginTop: "24px", display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column" }}>
                 <h2 style={{ fontSize: "18px", fontWeight: "bold", color: "#72b2ff" }}>Stay Updated</h2>
                 <p style={{ fontSize: "14px", color: "gray" }}>Subscribe for updates on upcoming tech events and hackathons.</p>
-                <div style={{ display: "flex", width: "100%", marginTop: "16px" }}>
+                <div style={{ display: "flex", width: "300px", marginTop: "16px", justifyContent: "center" }}>
                     <input 
                         type="email" 
                         value={email} 
@@ -60,7 +60,7 @@ export default function Contact() {
                         placeholder="Subscribe to our newsletter!" 
                         style={{ flex: 1, padding: "8px", borderTopLeftRadius: "4px", borderBottomLeftRadius: "4px", border: "none" }}
                     />
-                    <button style={{ backgroundColor: "#4fa3ff", padding: "8px", borderTopRightRadius: "4px", borderBottomRightRadius: "4px", border: "none" }}>➤</button>
+                    <button style={{ backgroundColor: "#4fa3ff", padding: "8px", borderTopRightRadius: "4px", borderBottomRightRadius: "4px", border: "none", }}>➤</button>
                 </div>
             </div>
         </div>

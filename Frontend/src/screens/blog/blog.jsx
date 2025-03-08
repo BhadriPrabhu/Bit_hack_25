@@ -26,20 +26,21 @@ const events = [
 
 export default function Blog() {
     return (
-        <div style={{ 
+        <div style={{
             // maxWidth: "1200px", 
             // margin: "0 auto", 
-            padding: "40px 20px", 
+            padding: "40px 20px",
             // background: "linear-gradient(135deg, #a8e063, #56ab2f)", 
             backgroundColor: "white",
-            minHeight: "100vh"
+            minHeight: "100vh",
+            fontFamily: "poppins",
         }}>
-            <h1 style={{ fontSize: "28px", fontWeight: "bold", textAlign: "center", marginBottom: "20px", color: "white" }}>Recent Tech Festivals 2025</h1>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))", gap: "20px" }}>
+            <h1 style={{ fontSize: "28px", fontWeight: "bold", textAlign: "center", marginBottom: "20px", color: "black" }}>Recent Tech Festivals 2025</h1>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))", gap: "20px", }}>
                 {events.map((event, index) => (
-                    <motion.div 
-                        key={index} 
-                        whileHover={{ scale: 1.05 }} 
+                    <motion.div
+                        key={index}
+                        whileHover={{ scale: 1.05 }}
                         style={{
                             padding: "20px",
                             boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
@@ -49,7 +50,8 @@ export default function Blog() {
                             display: "flex",
                             flexDirection: "column",
                             alignItems: "center",
-                            textAlign: "center"
+                            textAlign: "center",
+                            backgroundImage: "linear-gradient(62deg, #8EC5FC 0%, #e0c3fc 100%)",
                         }}
                     >
                         <h2 style={{ fontSize: "20px", fontWeight: "bold", marginBottom: "10px" }}>{event.name}</h2>

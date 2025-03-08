@@ -1,10 +1,12 @@
 import homeImage from '../../../assets/image/homeImage.png'
+import { useNavigate } from 'react-router-dom';
 
 export function HomePage(){
+    const navigate = useNavigate();
     return(
-        <div style={{fontFamily: "poppins"}}>
+        <div style={{fontFamily: "poppins", backgroundColor: "white"}}>
             <div style={{padding: "40px", display: "flex", justifyContent: "center"}}>
-                <div style={{display: "flex", flexDirection: "row", display: "flex", flexDirection: "row", gap: "100px"}}>
+                <div style={{display: "flex", flexDirection: "row", gap: "100px"}}>
                     <div>
                         <h1 style={{fontSize: "36px"}}>Unlock Your Talent</h1>
                     </div>
@@ -15,11 +17,14 @@ export function HomePage(){
                 
 
             </div>
+            <div>
+                <button onClick={() => navigate("/host")}>Host an Event</button>
+            </div>
             <div style={{display: "flex", justifyContent: "center"}}>
                 <div>
-                    <div>Fest Events</div>
-                    <div>Technical Hackathon Online</div>
-                    <div>Technical Hackathon Offline</div>
+                    <button style={{borderRadius: "15px", border: "solid 1px black", padding: "10px"}}>Fest Events</button>
+                    <button>Technical Hackathon Online</button>
+                    <button>Technical Hackathon Offline</button>
                     <div>Non Technical Events Online</div>
                     <div>Non Technical Events Offline</div>
                 </div>

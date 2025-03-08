@@ -11,6 +11,7 @@ import Scholarship from '../screens/Scholarship/scholarship';
 import { About } from '../screens/about/about';
 import { SignupScreen } from '../screens/signupScreen/signupScreen';
 import { SignupOrgScreen } from '../screens/signuporgScreen/signuporgScreen';
+import HostPage from '../screens/host/host';
 
 export function AppLayoutMain() {
     return (
@@ -18,6 +19,7 @@ export function AppLayoutMain() {
             <Route path="/" element={<LoginPage/>} />
             <Route path='/signup' element={<SignupScreen/>}/>
             <Route path='/signuporg' element={<SignupOrgScreen/>}/>
+            <Route path='/host' element={<HostPage/>}/>
             <Route path='/home' element={<><Navbar/><Home/></>}/>
             <Route path='/blog' element={<><Navbar/><Blog/></>}/>
             <Route path='/scholarship' element={<><Navbar/><Scholarship/></>}/>
