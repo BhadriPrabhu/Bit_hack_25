@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export function SignupOrg() {
     const [name, setName] = useState("");
@@ -9,6 +10,8 @@ export function SignupOrg() {
     const [company, setCompany] = useState("");
     const [revenue, setRevenue] = useState("");
     const [organiserProof, setOrganiserProof] = useState(null);
+
+    const navigate = useNavigate();
 
     const handleSignup = async (e) => {
         e.preventDefault();
@@ -86,15 +89,15 @@ export function SignupOrg() {
                     required
                     style={{width: "300px", padding: "5px", border: "solid 1px black", borderRadius: "10px", fontFamily: "poppins"}}
                 />
-                <input
+                {/* <input
                     type="file"
                     name="organiserProof"
                     onChange={(e) => setOrganiserProof(e.target.files[0])}
                     required
                     style={{width: "300px", padding: "5px", border: "solid 1px black", borderRadius: "10px", fontFamily: "poppins"}}
-                />
-                <label style={{fontFamily: "poppins"}}>Upload Organiser's Proof</label>
-                <button type="submit" style={{width: "100px", display: 'flex', justifyContent: "center", fontFamily: "poppins", fontSize: "18px", border: "solid 1px black", borderRadius: "10px"}}>Signup</button>
+                /> */}
+                {/* <label style={{fontFamily: "poppins"}}>Upload Organiser's Proof</label> */}
+                <button type="submit" onClick={() => navigate("/home")} style={{width: "100px", display: 'flex', justifyContent: "center", fontFamily: "poppins", fontSize: "18px", border: "solid 1px black", borderRadius: "10px"}}>Signup</button>
             </form>
         </div>
     );

@@ -44,6 +44,9 @@ export function CompetitionCard() {
                     <h3 style={{margin: "0px", padding: "0px", fontWeight: "normal"}}>Prize :</h3>
                     <h4 style={{margin: "0px", padding: "0px", fontWeight: "normal"}}>I YEAR - 1200; II YEAR -1200; III YEAR -2000; IV YEAR -2000</h4>
                 </div>
+                <div style={{display: "flex", justifyContent: "center", alignItems: "center"}}>
+                    <button style={{backgroundColor: "red", border: "solid 1px black", padding: "6px", paddingRight: "15px", paddingLeft: "15px", borderRadius: "15px", fontWeight: "bold", fontSize: "18px"}}>Register</button>
+                </div>
             </div>
         </div>
     );

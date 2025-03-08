@@ -47,7 +47,7 @@ export function Signup() {
                 <input name="email" value={email} onChange={(e) => setEmail(e.target.value)} type="email" placeholder="Enter Email" required style={{ width: "300px", padding: "5px", borderRadius: "10px" }} />
                 <input name="password" value={password} onChange={(e) => setPassword(e.target.value)} type="password" placeholder="Enter Password" required style={{ width: "300px", padding: "5px", borderRadius: "10px" }} />
                 
-             <a href="/signup/org" >
+             <a href="/signuporg" >
                 signup as organizer
             </a>
                 
@@ -56,7 +56,7 @@ export function Signup() {
             </form>
             
             
-            <button onClick={() => navigate("/login")} style={{ marginTop: "10px", padding: "5px 10px", borderRadius: "5px", backgroundColor: "blue", color: "white", cursor: "pointer" }}>
+            <button onClick={() => navigate("/")} style={{ marginTop: "10px", padding: "5px 10px", borderRadius: "5px", backgroundColor: "blue", color: "white", cursor: "pointer" }}>
                 Already have an account? Login
             </button>
         </div>

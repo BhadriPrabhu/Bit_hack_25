@@ -1,7 +1,7 @@
 const Triangle = ({ rotate }) => {
     return (
-      <svg width="100" height="100" style={{transform: "scaleX(-1)"}}>
-        <polygon points="0,0 100,100 0,100" fill="blue" />
+      <svg width="50" height="50" style={{transform: `${rotate}`}}>
+        <polygon points="0,0 100,100 0,100" fill="white" />
       </svg>
     );
   };
