@@ -1,11 +1,8 @@
-import Triangle from '../assets/icon/triangle'
-import { CompetitionCard } from '../components/bhadri/competitioncard/competitioncard'
-import { HomePage } from '../components/bhadri/homepage/homepage';
-import { Navbar } from '../components/bhadri/navbar/navbar';
-import { SemiCard } from '../components/bhadri/semicard/semicard'
+import { SemiCard } from "../../components/bhadri/semicard/semicard";
+import { CompetitionCard } from "../../components/bhadri/competitioncard/competitioncard";
 
-export function AppLayout() {
 
+export function Competition() {
 
     const eventData = [
         {
@@ -80,24 +77,26 @@ export function AppLayout() {
         },
     ];
 
-
     return (
-        <div style={{ backgroundColor: "white" }}>
-            <Navbar />
-            <HomePage />
-            <div style={{ display: "flex", flexDirection: "row", gap: "20px", padding: "20px", }}>
-                <div>
-                    {eventData.map((item) => {
-                        return (
-                            <SemiCard key={item.id} title={item.title} collegeName={item.collegeName} location={item.location} eventType={item.eventType} />
-                        );
-                    })}
-                </div>
-                <div>
-                    <CompetitionCard />
-                </div>
+        <div style={{ display: "flex", flexDirection: "row", gap: "20px", padding: "20px", }}>
+            <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+                {eventData.map((item) => {
+                    return (
+                        <SemiCard key={item.id} title={item.title} collegeName={item.collegeName} location={item.location} eventType={item.eventType} />
+                    );
+                })}            </div>
+            <div>
+                <CompetitionCard
+                    title="Aqua Tech Innovators"
+                    collegeName="Indian Institute of Technology, Guwahati"
+                    eventName="Techritik"
+                    location="Online"
+                    teamSize="4"
+                    website="https://kce.ac.in/national-conference-on-sustainable-materials-automotive-technologies-and-artificial-intelligence-smatai/"
+                    prize="I YEAR - 1200; II YEAR -1200; III YEAR -2000; IV YEAR -2000"
+                    imageSrc="https://example.com/event-image.jpg"
+                />
             </div>
-            <Triangle />
         </div>
     );
 }

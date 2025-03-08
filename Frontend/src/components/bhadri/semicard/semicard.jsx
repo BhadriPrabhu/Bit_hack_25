@@ -1,6 +1,7 @@
 // import Hackathon from '../../../assets/image/index'
 
 export function SemiCard({ title, collegeName, location, eventType }){
+
     return(
         <div style={{padding: "15px", display: "flex", width: "fit-content", borderRadius: "15px", boxShadow: "0px 0px 3px 0px", backgroundColor: "white", fontFamily: "poppins", height: "auto" }}>
             <div>

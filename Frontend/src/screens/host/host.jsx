@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./host.css";
+import { useNavigate } from "react-router-dom";
 
 export default function HostPage() {
     const [formData, setFormData] = useState({
@@ -21,6 +22,8 @@ export default function HostPage() {
         eventClassification: "",
         logo: null
     });
+
+    const navigate = useNavigate();
 
     const [loading, setLoading] = useState(false);
     const [message, setMessage] = useState("");
@@ -174,7 +177,7 @@ export default function HostPage() {
                         </div>
 
                         {/* Submit Button */}
-                        <button type="submit" className="submit-btn" disabled={loading}>
+                        <button type="submit" onClick={() => navigate("/home")} className="submit-btn" disabled={loading}>
                             {loading ? "Registering..." : "Register"}
                         </button>
 

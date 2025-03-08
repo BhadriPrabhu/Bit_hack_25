@@ -12,6 +12,8 @@ import { About } from '../screens/about/about';
 import { SignupScreen } from '../screens/signupScreen/signupScreen';
 import { SignupOrgScreen } from '../screens/signuporgScreen/signuporgScreen';
 import HostPage from '../screens/host/host';
+import { Competition } from '../screens/competition/competition';
+import { Student } from '../screens/student/student';
 
 export function AppLayoutMain() {
     return (
@@ -23,7 +25,9 @@ export function AppLayoutMain() {
             <Route path='/home' element={<><Navbar/><Home/></>}/>
             <Route path='/blog' element={<><Navbar/><Blog/></>}/>
             <Route path='/scholarship' element={<><Navbar/><Scholarship/></>}/>
+            <Route path='/competition' element={<><Navbar/><Competition/></>}/>
             <Route path='/competition' element={<><Navbar/><CompetitionCard/></>}/>
+            <Route path='/register' element={<><Navbar/><Student/></>}/>
             <Route path='/about' element={<><Navbar/><About/></>}/>
         </Routes>
     );
