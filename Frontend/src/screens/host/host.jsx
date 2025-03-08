@@ -1,5 +1,3 @@
-//host
-
 import React, { useState } from "react";
 import "./host.css";
 
@@ -24,6 +22,9 @@ export default function HostPage() {
         logo: null
     });
 
+    const [loading, setLoading] = useState(false);
+    const [message, setMessage] = useState("");
+
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData({ ...formData, [name]: value });
@@ -34,20 +35,62 @@ export default function HostPage() {
         setFormData({ ...formData, logo: file });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log("Form Submitted", formData);
-        alert("Registration Successful!");
+        setLoading(true);
+        setMessage("");
+
+        const apiUrl = "https://event-managent-backend-u1bm.onrender.com/api/events";
+
+        try {
+            const formDataToSend = new FormData();
+            for (const key in formData) {
+                formDataToSend.append(key, formData[key]);
+            }
+
+            const response = await fetch(apiUrl, {
+                method: "POST",
+                body: formDataToSend
+            });
+
+            const result = await response.json();
+
+            if (response.ok) {
+                setMessage("Registration Successful!");
+                setFormData({
+                    eventName: "",
+                    eventOrganizer: "",
+                    webLink: "",
+                    eventCategory: "",
+                    status: "",
+                    registrationStartDate: "",
+                    registrationEndDate: "",
+                    durationDays: "",
+                    eventLocation: "",
+                    eventLevel: "",
+                    state: "",
+                    country: "",
+                    competitionName: "",
+                    winnerPrize: "",
+                    createdDate: "",
+                    eventClassification: "",
+                    logo: null
+                });
+            } else {
+                setMessage(result.message || "Something went wrong!");
+            }
+        } catch (error) {
+            console.error("Error submitting form:", error);
+            setMessage("Failed to register. Please try again later.");
+        } finally {
+            setLoading(false);
+        }
     };
 
     return (
         <div className="registration-container">
             <div className="registration-card" 
-                style={{ 
-                    // background: "url('https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/41810341995087.57bd505fc7b34.gif') no-repeat center center fixed", 
-                    // backgroundSize: "cover" 
-                    backgroundImage: "linear-gradient(62deg, #162447 0%, #4fa3ff 100%)"
-                }}
+                style={{ backgroundImage: "linear-gradient(62deg, #162447 0%, #4fa3ff 100%)" }}
             >
                 <h2 style={{ color: "white" }}>Event Registration</h2>
                 <div className="form-scroll">
@@ -55,7 +98,7 @@ export default function HostPage() {
                         {/* Event Category */}
                         <div className="form-group">
                             <label style={{ color: "white" }}>Event Category:</label>
-                            <select name="eventCategory" value={formData.eventCategory} style={{width: "98%"}} onChange={handleChange} required>
+                            <select name="eventCategory" value={formData.eventCategory} onChange={handleChange} required>
                                 <option value="" disabled>Event Category</option>
                                 <option value="Paper Presentation">Paper Presentation</option>
                                 <option value="Competition">Competition</option>
@@ -66,7 +109,7 @@ export default function HostPage() {
                         {/* Event Classification */}
                         <div className="form-group">
                             <label style={{ color: "white" }}>Event Classification:</label>
-                            <select name="eventClassification" style={{width: "98%"}} value={formData.eventClassification} onChange={handleChange} required>
+                            <select name="eventClassification" value={formData.eventClassification} onChange={handleChange} required>
                                 <option value="" disabled>Event Classification</option>
                                 <option value="Fest Events">Fest Events</option>
                                 <option value="Technical Hackathon Online">Technical Hackathon Online</option>
@@ -131,7 +174,12 @@ export default function HostPage() {
                         </div>
 
                         {/* Submit Button */}
-                        <button type="submit" className="submit-btn">Register</button>
+                        <button type="submit" className="submit-btn" disabled={loading}>
+                            {loading ? "Registering..." : "Register"}
+                        </button>
+
+                        {/* Message */}
+                        {message && <p style={{ color: "white", marginTop: "10px" }}>{message}</p>}
                     </form>
                 </div>
             </div>
